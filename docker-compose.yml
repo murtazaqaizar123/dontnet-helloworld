@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  dotnet48-hello:
+    image: mcr.microsoft.com/dotnet/framework/runtime:4.8
+    container_name: dotnet48-hello
+    working_dir: /app
+    volumes:
+      - ./app:/app   # Mount local folder to container
+    command: cmd /c HelloWorld.bat   # Or use: powershell -File HelloWorld.ps1
