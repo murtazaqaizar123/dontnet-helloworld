@@ -1,10 +1,10 @@
 version: "3.8"
 
 services:
-  dotnet48-hello:
-    image: mcr.microsoft.com/dotnet/framework/runtime:4.8
-    container_name: dotnet48-hello
+  dotnet-hello:
+    image: mcr.microsoft.com/dotnet/runtime:7.0
+    container_name: dotnet-hello
     working_dir: /app
     volumes:
-      - ./app:/app   # Mount local folder to container
-    command: cmd /c HelloWorld.bat   # Or use: powershell -File HelloWorld.ps1
+      - ./app:/app
+    command: bash -c "echo 'Hello World from .NET 7 Linux container!'"
